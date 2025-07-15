@@ -19,7 +19,12 @@ steps:
       PathtoPublish: 'target'
       ArtifactName: 'drop'
       publishLocation: 'Container'
-
-
-
-
+- task: Docker@2
+  inputs:   
+    containerRegistry: '$(ContainerRegistry)'
+    repository: '$(ContainerRegistry)/$(ContainerRegistryNamespace)/$(ContainerRegistryImageName)'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.SourceBranchName)
+      latest
