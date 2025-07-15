@@ -30,7 +30,7 @@ steps:
   displayName: Build Docker image
   inputs:
     command: build
-    repository: your-dockerhub-username/your-repo
+    repository: omarmdv/java-maven-ci-cd
     Dockerfile: Dockerfile
     tags: |
       latest
@@ -39,7 +39,7 @@ steps:
   displayName: Push Docker image
   inputs:
     command: push
-    repository: your-dockerhub-username/your-repo
+    repository: omarmdv/java-maven-ci-cd
     tags: |
       latest
 
