@@ -15,7 +15,7 @@ steps:
 - script: mvn clean package
   displayName: 'Build the application'
 - task: PublishBuildArtifacts@1
-    inputs:
+  inputs:
       PathtoPublish: 'target'
       ArtifactName: 'drop'
       publishLocation: 'Container'
